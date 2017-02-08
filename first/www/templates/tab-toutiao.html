@@ -1,0 +1,11 @@
+<ion-view view-title="头条">
+  <ion-content ng-controller="toutiaoCrl">
+    <ion-list >
+      <ion-item class="item-thumbnail-left" ng-repeat="data in datas" ng-click="showDetail(data.url,data.title)">
+        <img src="{{data.pic}}">
+        <h2>{{data.title}}</h2>
+        <button ng-controller="SCCtrl" style="margin-top: 30px" class="button button-small  button-assertive icon-right ion-heart" ng-click="addItem(data.title);$event.stopPropagation();">收藏</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

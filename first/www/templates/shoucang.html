@@ -1,0 +1,21 @@
+<ion-view ng-controller="SCCtrl" view-title="shoucang">
+  <ion-header-bar class="bar-energized">
+    <button class="button button-outline button-assertive" ng-click="showDelete=!showDelete">delete</button>
+    <h1 class="title">我的收藏</h1>
+    <button class="button button-outline button-assertive" ng-click="showReorder=!showReorder">reorder</button>
+  </ion-header-bar>
+
+  <ion-content>
+    <ion-list show-delete="showDelete" show-reorder="showReorder">
+      <ion-item ng-repeat="data in datas">
+     <h2>  {{data.id}}  {{data.title}}</h2>
+        <ion-delete-button class="ion-minus-circled" ng-click="dropItem(data)"></ion-delete-button>
+        <ion-reorder-button class="ion-navicon"
+                            on-reorder="moveItem(data, $fromIndex, $toIndex)"></ion-reorder-button>
+
+        <ion-option-button class="button-positive">分享</ion-option-button>
+        <ion-option-button class="button-assertive">编辑</ion-option-button>
+      </ion-item>
+    </ion-list >
+  </ion-content>
+</ion-view>
